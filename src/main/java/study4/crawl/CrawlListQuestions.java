@@ -67,7 +67,7 @@ public class CrawlListQuestions {
         final ToeicFullTest toeicFullTest = new ToeicFullTest();
 
         toeicFullTest.setFullName(CrawlStudy4Utils.getFullNameFromUrl(testResultUrl));
-        toeicFullTest.setSlug(toeicFullTest.getFullName());
+        toeicFullTest.setSlug(toSlug(toeicFullTest.getFullName()));
 
         //log.debug("SIZE = " + rootResultDetail.toString().length() / 1024.0 + " KB");
 
