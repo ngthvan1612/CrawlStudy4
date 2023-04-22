@@ -7,9 +7,7 @@ import study4.crawl.CrawlListResultTests;
 import study4.crawl.ZipToeicFullTest;
 import study4.model.*;
 
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -105,8 +103,14 @@ public class Main {
                 gson.toJson(tests));
 
         ZipToeicFullTest zipToeicFullTest = new ZipToeicFullTest();
+        int counter = 0;
         for (ToeicFullTest test : tests) {
-            zipToeicFullTest.zipFile(test);
+            if (++counter > 5) break;
+            ByteArrayOutputStream outputStream = zipToeicFullTest.zipFile(test);
+            final String fileName = "/home/ngthvan1612/Videos/" + test.getSlug() + ".zip";
+            try (OutputStream out = new FileOutputStream(fileName)) {
+                outputStream.writeTo(out);
+            }
         }
 
         return tests;
