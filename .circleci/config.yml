@@ -16,13 +16,14 @@ jobs:
       - image: cimg/base:2023.03
     steps:
       - install_java_package
+      - checkout
       - run:
           name: "Crawl study 4"
           command: |
             mvn clean install -DskipTests
             mvn exec:java
 workflows:
-  build_pipeline:
+  crawl-study-4:
     jobs:
       - build:
           filters:
