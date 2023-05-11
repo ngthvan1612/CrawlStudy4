@@ -28,7 +28,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2020-test-4-ets-toeic-2022-test-9:
     docker:
@@ -46,7 +46,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2020-test-5-ets-toeic-2021-test-5:
     docker:
@@ -64,7 +64,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2022-test-8-ets-toeic-2020-test-6:
     docker:
@@ -82,7 +82,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2022-test-7-ets-toeic-2020-test-7:
     docker:
@@ -100,7 +100,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2022-test-6-ets-toeic-2020-test-8:
     docker:
@@ -118,7 +118,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2020-test-10-ets-toeic-2020-test-9:
     docker:
@@ -136,7 +136,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2022-test-1-ets-toeic-2019-test-8:
     docker:
@@ -154,7 +154,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2021-test-2-ets-toeic-2022-test-5:
     docker:
@@ -172,7 +172,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2018-test-5-ets-toeic-2019-test-9:
     docker:
@@ -190,7 +190,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2020-test-1-ets-toeic-2021-test-1:
     docker:
@@ -208,7 +208,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2022-test-4-ets-toeic-2019-test-6:
     docker:
@@ -226,7 +226,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2020-test-2-ets-toeic-2021-test-4:
     docker:
@@ -244,7 +244,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2022-test-3-ets-toeic-2019-test-7:
     docker:
@@ -262,7 +262,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2020-test-3-ets-toeic-2021-test-3:
     docker:
@@ -280,7 +280,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2022-test-2-ets-toeic-2018-test-2:
     docker:
@@ -298,7 +298,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2019-test-4-ets-toeic-2018-test-1:
     docker:
@@ -316,7 +316,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2019-test-5-ets-toeic-2018-test-4:
     docker:
@@ -334,7 +334,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2019-test-2-ets-toeic-2018-test-3:
     docker:
@@ -352,7 +352,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
   crawl-ets-toeic-2019-test-3-ets-toeic-2019-test-1:
     docker:
@@ -370,7 +370,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 
 workflows:
   crawl-study-4:

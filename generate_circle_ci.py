@@ -33,7 +33,7 @@ JOB_BASE = """
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
     store_artifacts:
-      path: .
+      path: ./
 """
 
 FOOTER = """
