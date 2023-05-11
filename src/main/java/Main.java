@@ -45,7 +45,7 @@ public class Main {
     }
 
     private static void crawlStream() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("ahihi-full.json");
+        FileInputStream fileInputStream = new FileInputStream("tests.json");
         String json = new String(fileInputStream.readAllBytes(), StandardCharsets.UTF_8);
         final Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
@@ -130,7 +130,7 @@ public class Main {
             tests.add(toeicFullTest);
         }
 
-        Files.writeString(Path.of("ahihi-full.json"),
+        Files.writeString(Path.of("tests.json"),
                 gson.toJson(tests));
 
         Map<String, String> env = System.getenv();

@@ -32,6 +32,8 @@ JOB_BASE = """
             mvn clean install -DskipTests
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
+    store_artifacts:
+      path: .
 """
 
 FOOTER = """
@@ -48,7 +50,7 @@ TEMPLATE_JOB = """
                 - deployment
 """
 
-with open('./ahihi-full.json', 'r') as f:
+with open('./tests.json', 'r') as f:
     j = json.load(f)
 
 output_str = HEADER
