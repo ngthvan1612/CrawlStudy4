@@ -23,6 +23,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BasicConfigurator.configure();
         crawList();
+        crawlStream();
     }
 
     private static final Pattern NON_LATIN = Pattern.compile("[^\\w-]");
@@ -42,14 +43,14 @@ public class Main {
     }
 
     private static void crawlStream() throws IOException {
-        FileInputStream fileInputStream = new FileInputStream("/home/ngthvan1612/Desktop/ahihi-full.json");
+        FileInputStream fileInputStream = new FileInputStream("ahihi-full.json");
         String json = new String(fileInputStream.readAllBytes(), StandardCharsets.UTF_8);
         final Gson gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .create();
         List<ToeicFullTest> tests = List.of(gson.fromJson(json, ToeicFullTest[].class));
 
-        FileWriter fileWriter = new FileWriter("/home/ngthvan1612/Desktop/list-download.txt");
+        FileWriter fileWriter = new FileWriter("list-download.txt");
         for (ToeicFullTest test : tests) {
             for (ToeicPart part : test.getParts()) {
                 for (ToeicQuestionGroup group : part.getGroups()) {
@@ -99,15 +100,14 @@ public class Main {
             tests.add(toeicFullTest);
         }
 
-        Files.writeString(Path.of("/home/ngthvan1612/Desktop/ahihi-full.json"),
+        Files.writeString(Path.of("ahihi-full.json"),
                 gson.toJson(tests));
 
         ZipToeicFullTest zipToeicFullTest = new ZipToeicFullTest();
         int counter = 0;
         for (ToeicFullTest test : tests) {
-            if (++counter > 5) break;
             ByteArrayOutputStream outputStream = zipToeicFullTest.zipFile(test);
-            final String fileName = "/home/ngthvan1612/Videos/" + test.getSlug() + ".zip";
+            final String fileName = "" + test.getSlug() + ".zip";
             try (OutputStream out = new FileOutputStream(fileName)) {
                 outputStream.writeTo(out);
             }
