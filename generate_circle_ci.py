@@ -73,8 +73,10 @@ UPLOAD_TO_VPS = """
           command: |
             pwd
             ls
-            ls project/zip
-            #sudo apt-get install git python3 python3-pip -y
+            cd zip
+            sudo apt-get install git python3 python3-pip -y
+            pip3 install requests paramiko
+            python3 ./.deploy/ssh.py
 
 """
 

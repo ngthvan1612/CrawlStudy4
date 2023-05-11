@@ -4,7 +4,6 @@ import json
 
 SSH_PASSWORD = os.environ['SSH_PASSWORD']
 SSH_IP = os.environ['SSH_IP']
-BACKEND_HEALTH_CHECK_URL = os.environ['BACKEND_HEALTH_CHECK_URL']
 
 ssh = paramiko.SSHClient()
 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -15,6 +14,10 @@ print(f'Connect to {SSH_IP} OK')
 
 # upload Toeic.war
 ftp = ssh.open_sftp()
+
+try:
+    ftp.mkdir('/root/toeic-data')
+except: pass
 
 files = os.listdir()
 files = [f for f in files if f.endswith('.zip')]
