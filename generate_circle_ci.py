@@ -32,6 +32,8 @@ JOB_BASE = """
             mvn clean install -DskipTests
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
+      - store_artifacts:
+            path: ./
 """
 
 FOOTER = """
