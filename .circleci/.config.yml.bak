@@ -1,0 +1,36 @@
+version: 2.1
+
+commands:
+  install_java_package:
+    steps:
+      - run:
+          name: Cài đặt java package
+          command: |
+            sudo apt-get update
+            sudo apt-get install maven openjdk-17-jdk -y
+            sudo apt-get install redis
+            sudo redis-server --daemonize yes
+jobs:
+  build:
+    docker:
+      - image: cimg/base:2023.03
+    environment:
+      CRAWL_FROM: 1
+      CRAWL_TO: 7
+    steps:
+      - install_java_package
+      - checkout
+      - run:
+          name: "Crawl study 4"
+          command: |
+            mvn clean install -DskipTests
+            mvn test-compile compile
+            mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
+workflows:
+  crawl-study-4:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - deployment

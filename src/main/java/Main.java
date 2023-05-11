@@ -23,7 +23,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BasicConfigurator.configure();
         crawList();
-        crawlStream();
+        //crawlStream();
     }
 
     private static final Pattern NON_LATIN = Pattern.compile("[^\\w-]");
@@ -102,6 +102,8 @@ public class Main {
 
         Files.writeString(Path.of("ahihi-full.json"),
                 gson.toJson(tests));
+
+        if (1 < 2) return null;
 
         ZipToeicFullTest zipToeicFullTest = new ZipToeicFullTest();
         int counter = 0;
