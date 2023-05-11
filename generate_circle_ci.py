@@ -32,10 +32,12 @@ JOB_BASE = """
             mvn clean install -DskipTests
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
+            mkdir zip
+            mv *.zip zip/
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./
+            - ./zip/
 """
 
 FOOTER = """
@@ -70,6 +72,7 @@ UPLOAD_TO_VPS = """
           command: |
             pwd
             ls
+            ls zip
             #sudo apt-get install git python3 python3-pip -y
 
 """
