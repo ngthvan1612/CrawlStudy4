@@ -32,8 +32,8 @@ JOB_BASE = """
             mvn clean install -DskipTests
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
-      - store_artifacts:
-            path: ./*.zip
+      - persist_to_workspace:
+            path: ./
 """
 
 FOOTER = """
@@ -66,7 +66,7 @@ UPLOAD_TO_VPS = """
             pwd
             ls
             #sudo apt-get install git python3 python3-pip -y
-      - store_artifacts:
+      - persist_to_workspace:
             path: ./
 """
 
