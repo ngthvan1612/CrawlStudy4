@@ -33,7 +33,9 @@ JOB_BASE = """
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          path: ./
+          root: .
+          paths:
+            - ./
 """
 
 FOOTER = """
