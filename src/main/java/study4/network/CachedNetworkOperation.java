@@ -17,7 +17,7 @@ public class CachedNetworkOperation {
     private final static Jedis jedisInstance = new Jedis();
     private final static JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
     static {
-        jedisPoolConfig.setMaxTotal(32);
+        jedisPoolConfig.setMaxTotal(8);
     }
     private final static JedisPool jedisPool = new JedisPool(jedisPoolConfig);
 
