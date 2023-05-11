@@ -60,10 +60,10 @@ UPLOAD_TO_VPS = """
     docker:
       - image: cimg/base:2023.03
     steps:
-      - checkout
       - run:
           name: "Upload to VPS"
           command: |
+            pwd
             ls
             #sudo apt-get install git python3 python3-pip -y
       - store_artifacts:
