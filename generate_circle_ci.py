@@ -63,7 +63,7 @@ DEPENDENCY_UPLOAD = """
 UPLOAD_TO_VPS = """
   upload-to-vps:
     docker:
-      - image: cimg/base:2023.03
+      - image: ubuntu:22.04
     steps:
       - checkout
       - attach_workspace:
@@ -74,6 +74,7 @@ UPLOAD_TO_VPS = """
             pwd
             ls
             cd zip
+            sudo apt-get update
             sudo apt-get install git python3 python3-pip -y
             pip3 install requests paramiko
             python3 ../.deploy/ssh.py
