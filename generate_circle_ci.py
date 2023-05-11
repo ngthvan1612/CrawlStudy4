@@ -50,6 +50,26 @@ TEMPLATE_JOB = """
                 - deployment
 """
 
+DEPENDENCY_UPLOAD = """
+      - upload-to-vps:
+          requires:
+"""
+
+UPLOAD_TO_VPS = """
+  upload-to-vps:
+    docker:
+      - image: cimg/base:2023.03
+    steps:
+      - checkout
+      - run:
+          name: "Upload to VPS"
+          command: |
+            ls
+            #sudo apt-get install git python3 python3-pip -y
+      - store_artifacts:
+            path: ./
+"""
+
 with open('./tests.json', 'r') as f:
     j = json.load(f)
 
@@ -68,7 +88,10 @@ for i in range(0, 40, 2):
         crawl_title = j[i]['slug'] + '-' + j[i + 1]['slug']
     )
 
-output_str += FOOTER
+    DEPENDENCY_UPLOAD += "            - " + j[i]['slug'] + '-' + j[i + 1]['slug'] + '\n'
+
+output_str += UPLOAD_TO_VPS
+output_str += FOOTER + DEPENDENCY_UPLOAD
 
 with open('./.circleci/config.yml', 'w', encoding='utf-8') as f:
     f.write(output_str)
