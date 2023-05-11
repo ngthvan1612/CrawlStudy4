@@ -33,7 +33,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2020-test-4-ets-toeic-2022-test-9:
     docker:
@@ -56,7 +56,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2020-test-5-ets-toeic-2021-test-5:
     docker:
@@ -79,7 +79,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2022-test-8-ets-toeic-2020-test-6:
     docker:
@@ -102,7 +102,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2022-test-7-ets-toeic-2020-test-7:
     docker:
@@ -125,7 +125,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2022-test-6-ets-toeic-2020-test-8:
     docker:
@@ -148,7 +148,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2020-test-10-ets-toeic-2020-test-9:
     docker:
@@ -171,7 +171,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2022-test-1-ets-toeic-2019-test-8:
     docker:
@@ -194,7 +194,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2021-test-2-ets-toeic-2022-test-5:
     docker:
@@ -217,7 +217,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2018-test-5-ets-toeic-2019-test-9:
     docker:
@@ -240,7 +240,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2020-test-1-ets-toeic-2021-test-1:
     docker:
@@ -263,7 +263,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2022-test-4-ets-toeic-2019-test-6:
     docker:
@@ -286,7 +286,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2020-test-2-ets-toeic-2021-test-4:
     docker:
@@ -309,7 +309,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2022-test-3-ets-toeic-2019-test-7:
     docker:
@@ -332,7 +332,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2020-test-3-ets-toeic-2021-test-3:
     docker:
@@ -355,7 +355,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2022-test-2-ets-toeic-2018-test-2:
     docker:
@@ -378,7 +378,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2019-test-4-ets-toeic-2018-test-1:
     docker:
@@ -401,7 +401,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2019-test-5-ets-toeic-2018-test-4:
     docker:
@@ -424,7 +424,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2019-test-2-ets-toeic-2018-test-3:
     docker:
@@ -447,7 +447,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   crawl-ets-toeic-2019-test-3-ets-toeic-2019-test-1:
     docker:
@@ -470,7 +470,7 @@ jobs:
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 
   upload-to-vps:
     docker:
@@ -484,7 +484,7 @@ jobs:
           command: |
             pwd
             ls
-            ls zip
+            ls project/zip
             #sudo apt-get install git python3 python3-pip -y
 
 

@@ -38,7 +38,7 @@ JOB_BASE = """
       - persist_to_workspace:
           root: ~/
           paths:
-            - ./zip/
+            - ./project/zip/
 """
 
 FOOTER = """
@@ -73,7 +73,7 @@ UPLOAD_TO_VPS = """
           command: |
             pwd
             ls
-            ls zip
+            ls project/zip
             #sudo apt-get install git python3 python3-pip -y
 
 """
