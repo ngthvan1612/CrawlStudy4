@@ -33,7 +33,7 @@ JOB_BASE = """
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 """
@@ -70,7 +70,7 @@ UPLOAD_TO_VPS = """
             ls
             #sudo apt-get install git python3 python3-pip -y
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 """

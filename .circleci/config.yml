@@ -28,7 +28,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -48,7 +48,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -68,7 +68,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -88,7 +88,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -108,7 +108,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -128,7 +128,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -148,7 +148,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -168,7 +168,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -188,7 +188,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -208,7 +208,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -228,7 +228,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -248,7 +248,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -268,7 +268,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -288,7 +288,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -308,7 +308,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -328,7 +328,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -348,7 +348,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -368,7 +368,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -388,7 +388,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -408,7 +408,7 @@ jobs:
             mvn test-compile compile
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
@@ -424,7 +424,7 @@ jobs:
             ls
             #sudo apt-get install git python3 python3-pip -y
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths:
             - ./
 
