@@ -23,7 +23,8 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BasicConfigurator.configure();
-        crawList();
+        //crawList();
+        circleCICrawlData();
         //crawlStream();
     }
 
@@ -79,6 +80,34 @@ public class Main {
             }
         }
         fileWriter.close();
+    }
+
+    private static void circleCICrawlData() throws IOException {
+        FileInputStream fileInputStream = new FileInputStream("tests.json");
+        String json = new String(fileInputStream.readAllBytes(), StandardCharsets.UTF_8);
+        final Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+        List<ToeicFullTest> tests = List.of(gson.fromJson(json, ToeicFullTest[].class));
+
+        Map<String, String> env = System.getenv();
+        final int from = Integer.parseInt(env.get("CRAWL_FROM"));
+        final int to = Integer.parseInt(env.get("CRAWL_TO"));
+
+        ZipToeicFullTest zipToeicFullTest = new ZipToeicFullTest();
+        int counter = 0;
+        for (ToeicFullTest test : tests) {
+            if (counter < from || counter > to) {
+                counter += 1;
+                continue;
+            }
+            counter += 1;
+            ByteArrayOutputStream outputStream = zipToeicFullTest.zipFile(test);
+            final String fileName = "" + test.getSlug() + ".zip";
+            try (OutputStream out = new FileOutputStream(fileName)) {
+                outputStream.writeTo(out);
+            }
+        }
     }
 
     private static List<ToeicFullTest> crawList() throws IOException {
