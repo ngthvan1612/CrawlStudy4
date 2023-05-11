@@ -63,16 +63,17 @@ UPLOAD_TO_VPS = """
       - image: cimg/base:2023.03
     steps:
       - checkout
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - ./
       - run:
           name: "Upload to VPS"
           command: |
             pwd
             ls
             #sudo apt-get install git python3 python3-pip -y
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ./
+
 """
 
 with open('./tests.json', 'r') as f:
