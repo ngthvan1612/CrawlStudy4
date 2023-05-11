@@ -7,9 +7,7 @@ commands:
           name: Cài đặt java package
           command: |
             sudo apt-get update
-            sudo apt-get install maven openjdk-17-jdk git -y
-            sudo apt-get install python3 python3-pip -y
-            pip3 install paramiko requests
+            sudo apt-get install maven openjdk-17-jdk -y
 jobs:
   build:
     docker:
@@ -21,6 +19,7 @@ jobs:
           name: "Crawl study 4"
           command: |
             mvn clean install -DskipTests
+            mvn -e compile exec:java
             mvn exec:java
 workflows:
   crawl-study-4:
