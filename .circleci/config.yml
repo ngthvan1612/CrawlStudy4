@@ -485,8 +485,8 @@ jobs:
             pwd
             ls
             cd zip
-            sudo apt-get update
-            sudo apt-get install git python3 python3-pip -y
+            apt-get update
+            apt-get install git python3 python3-pip -y
             pip3 install requests paramiko
             python3 ../.deploy/ssh.py
 
@@ -618,22 +618,3 @@ workflows:
       - upload-to-vps:
           requires:
             - crawl-ets-toeic-2019-test-10-ets-toeic-2022-test-10
-            - crawl-ets-toeic-2020-test-4-ets-toeic-2022-test-9
-            - crawl-ets-toeic-2020-test-5-ets-toeic-2021-test-5
-            - crawl-ets-toeic-2022-test-8-ets-toeic-2020-test-6
-            - crawl-ets-toeic-2022-test-7-ets-toeic-2020-test-7
-            - crawl-ets-toeic-2022-test-6-ets-toeic-2020-test-8
-            - crawl-ets-toeic-2020-test-10-ets-toeic-2020-test-9
-            - crawl-ets-toeic-2022-test-1-ets-toeic-2019-test-8
-            - crawl-ets-toeic-2021-test-2-ets-toeic-2022-test-5
-            - crawl-ets-toeic-2018-test-5-ets-toeic-2019-test-9
-            - crawl-ets-toeic-2020-test-1-ets-toeic-2021-test-1
-            - crawl-ets-toeic-2022-test-4-ets-toeic-2019-test-6
-            - crawl-ets-toeic-2020-test-2-ets-toeic-2021-test-4
-            - crawl-ets-toeic-2022-test-3-ets-toeic-2019-test-7
-            - crawl-ets-toeic-2020-test-3-ets-toeic-2021-test-3
-            - crawl-ets-toeic-2022-test-2-ets-toeic-2018-test-2
-            - crawl-ets-toeic-2019-test-4-ets-toeic-2018-test-1
-            - crawl-ets-toeic-2019-test-5-ets-toeic-2018-test-4
-            - crawl-ets-toeic-2019-test-2-ets-toeic-2018-test-3
-            - crawl-ets-toeic-2019-test-3-ets-toeic-2019-test-1

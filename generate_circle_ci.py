@@ -74,8 +74,8 @@ UPLOAD_TO_VPS = """
             pwd
             ls
             cd zip
-            sudo apt-get update
-            sudo apt-get install git python3 python3-pip -y
+            apt-get update
+            apt-get install git python3 python3-pip -y
             pip3 install requests paramiko
             python3 ../.deploy/ssh.py
 
