@@ -21,8 +21,8 @@ jobs:
           name: "Crawl study 4"
           command: |
             mvn clean install -DskipTests
-            mvn -e compile exec:java
-            mvn exec:java
+            mvn test-compile compile
+            mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
 workflows:
   crawl-study-4:
     jobs:
