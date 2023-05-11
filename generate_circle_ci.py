@@ -34,6 +34,7 @@ JOB_BASE = """
             mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
             mkdir zip
             mv *.zip zip/
+            pwd
       - persist_to_workspace:
           root: ~/
           paths:
