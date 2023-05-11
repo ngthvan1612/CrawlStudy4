@@ -22,7 +22,7 @@ jobs:
           command: |
             mvn clean install -DskipTests
             mvn test-compile compile
-            mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=32
+            mvn exec:java -Djava.util.concurrent.ForkJoinPool.common.parallelism=64
 workflows:
   crawl-study-4:
     jobs:
