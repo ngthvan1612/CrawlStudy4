@@ -112,6 +112,7 @@ public class Main {
         int counter = 0;
         for (ToeicFullTest test : tests) {
             if (counter < from || counter > to) {
+                counter += 1;
                 continue;
             }
             counter += 1;
