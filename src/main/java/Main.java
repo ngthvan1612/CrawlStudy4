@@ -15,6 +15,7 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 @Slf4j
@@ -103,11 +104,17 @@ public class Main {
         Files.writeString(Path.of("ahihi-full.json"),
                 gson.toJson(tests));
 
-        if (1 < 2) return null;
+        Map<String, String> env = System.getenv();
+        final int from = Integer.parseInt(env.get("CRAWL_FROM"));
+        final int to = Integer.parseInt(env.get("CRAWL_TO"));
 
         ZipToeicFullTest zipToeicFullTest = new ZipToeicFullTest();
         int counter = 0;
         for (ToeicFullTest test : tests) {
+            if (counter < from || counter > to) {
+                continue;
+            }
+            counter += 1;
             ByteArrayOutputStream outputStream = zipToeicFullTest.zipFile(test);
             final String fileName = "" + test.getSlug() + ".zip";
             try (OutputStream out = new FileOutputStream(fileName)) {
