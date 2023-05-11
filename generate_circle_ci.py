@@ -63,10 +63,8 @@ UPLOAD_TO_VPS = """
       - image: cimg/base:2023.03
     steps:
       - checkout
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - ./
+      - attach_workspace:
+          at: ~/
       - run:
           name: "Upload to VPS"
           command: |
