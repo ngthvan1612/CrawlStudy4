@@ -67,7 +67,9 @@ UPLOAD_TO_VPS = """
             ls
             #sudo apt-get install git python3 python3-pip -y
       - persist_to_workspace:
-          path: ./
+          root: .
+          paths:
+            - ./
 """
 
 with open('./tests.json', 'r') as f:
