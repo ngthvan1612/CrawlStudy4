@@ -8,6 +8,8 @@ commands:
           command: |
             sudo apt-get update
             sudo apt-get install maven openjdk-17-jdk -y
+            sudo apt-get install redis
+            sudo redis-server --daemonize yes
 jobs:
   build:
     docker:
