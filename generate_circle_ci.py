@@ -62,6 +62,7 @@ UPLOAD_TO_VPS = """
     docker:
       - image: cimg/base:2023.03
     steps:
+      - checkout
       - run:
           name: "Upload to VPS"
           command: |
