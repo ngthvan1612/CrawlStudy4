@@ -88,7 +88,7 @@ for i in range(0, 40, 2):
         crawl_title = j[i]['slug'] + '-' + j[i + 1]['slug']
     )
 
-    DEPENDENCY_UPLOAD += "            - " + j[i]['slug'] + '-' + j[i + 1]['slug'] + '\n'
+    DEPENDENCY_UPLOAD += "            - crawl-" + j[i]['slug'] + '-' + j[i + 1]['slug'] + '\n'
 
 output_str += UPLOAD_TO_VPS
 output_str += FOOTER + DEPENDENCY_UPLOAD
