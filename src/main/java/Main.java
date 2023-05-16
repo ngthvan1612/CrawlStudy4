@@ -82,7 +82,7 @@ public class Main {
         fileWriter.close();
     }
 
-    private static void circleCICrawlData() throws IOException {
+    public static void circleCICrawlData() throws IOException {
         FileInputStream fileInputStream = new FileInputStream("tests.json");
         String json = new String(fileInputStream.readAllBytes(), StandardCharsets.UTF_8);
         final Gson gson = new GsonBuilder()
@@ -110,7 +110,7 @@ public class Main {
         }
     }
 
-    private static List<ToeicFullTest> crawList() throws IOException {
+    public static List<ToeicFullTest> crawList() throws IOException {
         final CrawlListResultTests crawListResultTests = new CrawlListResultTests();
         final List<String> testResultUrls = crawListResultTests.crawl();
         final String testUrl = testResultUrls.get(testResultUrls.size() - 1);
@@ -133,23 +133,20 @@ public class Main {
         Files.writeString(Path.of("tests.json"),
                 gson.toJson(tests));
 
+        if (1 < 2) return null;
+
         Map<String, String> env = System.getenv();
-        final int from = Integer.parseInt(env.get("CRAWL_FROM"));
-        final int to = Integer.parseInt(env.get("CRAWL_TO"));
 
         ZipToeicFullTest zipToeicFullTest = new ZipToeicFullTest();
         int counter = 0;
         for (ToeicFullTest test : tests) {
-            if (counter < from || counter > to) {
-                counter += 1;
-                continue;
-            }
             counter += 1;
             ByteArrayOutputStream outputStream = zipToeicFullTest.zipFile(test);
             final String fileName = "" + test.getSlug() + ".zip";
             try (OutputStream out = new FileOutputStream(fileName)) {
                 outputStream.writeTo(out);
             }
+            break;
         }
 
         return tests;
