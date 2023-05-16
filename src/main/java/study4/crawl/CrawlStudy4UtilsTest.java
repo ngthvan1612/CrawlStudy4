@@ -1,5 +1,15 @@
 package study4.crawl;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import study4.model.ToeicFullTest;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CrawlStudy4UtilsTest {
@@ -15,5 +25,30 @@ class CrawlStudy4UtilsTest {
                 "</div>";
         String output = CrawlStudy4Utils.formatHtml(html);
         System.out.println(output);
+    }
+
+    @org.junit.jupiter.api.Test
+    void testCrawl() throws IOException {
+        final CrawlListResultTests crawListResultTests = new CrawlListResultTests();
+        final List<String> testResultUrls = crawListResultTests.crawl();
+        final String testUrl = testResultUrls.get(testResultUrls.size() - 1);
+
+        System.out.println("CHOOSE: " + testUrl);
+
+        final CrawlListQuestions crawlListQuestions = new CrawlListQuestions();
+        crawlListQuestions.crawl(testUrl);
+
+        final Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
+
+        List<ToeicFullTest> tests = new ArrayList<>();
+        for (String x : testResultUrls) {
+            final ToeicFullTest toeicFullTest = new CrawlListQuestions().crawl(x);
+            tests.add(toeicFullTest);
+        }
+
+        Files.writeString(Path.of("tests.json"),
+                gson.toJson(tests));
     }
 }
