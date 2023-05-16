@@ -1,8 +1,14 @@
 package study4.crawl;
 
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import org.jsoup.Jsoup;
 import org.jsoup.internal.StringUtil;
+import org.jsoup.nodes.Attribute;
+import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import study4.network.CachedNetworkOperation;
 
 import java.io.IOException;
@@ -62,5 +68,23 @@ public class CrawlStudy4Utils {
                         return null;
                     }
                 }).toList();
+    }
+
+    public static String formatHtml(final @NonNull String html) {
+        Document document = Jsoup.parse(html);
+        Elements el = document.getAllElements();
+        for (Element e : el) {
+            List<String>  attToRemove = new ArrayList<>();
+            Attributes at = e.attributes();
+            for (Attribute a : at) {
+                attToRemove.add(a.getKey());
+            }
+
+            for(String att : attToRemove) {
+                e.removeAttr(att);
+            }
+        }
+
+        return document.toString();
     }
 }

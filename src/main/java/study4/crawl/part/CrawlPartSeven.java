@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jsoup.nodes.Element;
+import study4.crawl.CrawlStudy4Utils;
 import study4.model.*;
 
 import java.util.ArrayList;
@@ -154,13 +155,13 @@ public class CrawlPartSeven {
 
         ToeicItemContent itemContentTranscriptEnglish = new ToeicItemContent();
         itemContentTranscriptEnglish.setType("HTML");
-        itemContentTranscriptEnglish.setContent(transcriptEnglishElement.toString());
+        itemContentTranscriptEnglish.setContent(CrawlStudy4Utils.formatHtml(transcriptEnglishElement.toString()));
 
         if (root.getElementsByClass("context-content context-transcript text-highlightable").size() > 0) {
             final Element transcriptVietNamElement = root.getElementsByClass("context-content context-transcript text-highlightable").get(0);
             ToeicItemContent itemContentTranscriptVietNam = new ToeicItemContent();
             itemContentTranscriptVietNam.setType("HTML");
-            itemContentTranscriptVietNam.setContent(transcriptVietNamElement.toString());
+            itemContentTranscriptVietNam.setContent(CrawlStudy4Utils.formatHtml(transcriptVietNamElement.toString()));
         }
 
         // 2. Get 4 child question

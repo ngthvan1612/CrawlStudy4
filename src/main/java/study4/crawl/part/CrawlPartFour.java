@@ -29,7 +29,7 @@ public class CrawlPartFour {
         final Element transcriptElement = doc.getElementsByClass("context-content context-transcript ").get(0);
 
         transcriptContent.setType("HTML");
-        transcriptContent.setContent(transcriptElement.toString());
+        transcriptContent.setContent(CrawlStudy4Utils.formatHtml(transcriptElement.toString()));
 
         return transcriptContent;
     }

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import study4.crawl.CrawlStudy4Utils;
 import study4.model.*;
 
 import org.jsoup.nodes.*;
@@ -152,11 +153,11 @@ public class CrawlPartSix {
 
         ToeicItemContent itemContentTranscriptEnglish = new ToeicItemContent();
         itemContentTranscriptEnglish.setType("HTML");
-        itemContentTranscriptEnglish.setContent(transcriptEnglishElement.toString());
+        itemContentTranscriptEnglish.setContent(CrawlStudy4Utils.formatHtml(transcriptEnglishElement.toString()));
 
         ToeicItemContent itemContentTranscriptVietNam = new ToeicItemContent();
         itemContentTranscriptVietNam.setType("HTML");
-        itemContentTranscriptVietNam.setContent(transcriptVietNamElement.toString());
+        itemContentTranscriptVietNam.setContent(CrawlStudy4Utils.formatHtml(transcriptVietNamElement.toString()));
 
         // 2. Get 4 child question
         assert root.getElementsByClass("questions-wrapper").size() == 1;
