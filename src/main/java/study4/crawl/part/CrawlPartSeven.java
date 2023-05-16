@@ -153,15 +153,20 @@ public class CrawlPartSeven {
 
         final Element transcriptEnglishElement = root.getElementsByClass("context-content text-highlightable").get(0);
 
+        List<ToeicItemContent> itemContents = new ArrayList<>();
+        toeicQuestionGroup.setQuestionContents(itemContents);
+
         ToeicItemContent itemContentTranscriptEnglish = new ToeicItemContent();
         itemContentTranscriptEnglish.setType("HTML");
         itemContentTranscriptEnglish.setContent(CrawlStudy4Utils.formatHtml(transcriptEnglishElement.toString()));
+        itemContents.add(itemContentTranscriptEnglish);
 
         if (root.getElementsByClass("context-content context-transcript text-highlightable").size() > 0) {
             final Element transcriptVietNamElement = root.getElementsByClass("context-content context-transcript text-highlightable").get(0);
             ToeicItemContent itemContentTranscriptVietNam = new ToeicItemContent();
             itemContentTranscriptVietNam.setType("HTML");
             itemContentTranscriptVietNam.setContent(CrawlStudy4Utils.formatHtml(transcriptVietNamElement.toString()));
+            itemContents.add(itemContentTranscriptVietNam);
         }
 
         // 2. Get 4 child question
